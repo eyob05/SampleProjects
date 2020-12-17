@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Form</title>
+
+</head>
+<body>
+
+<H2> Student Details</H2>
+<p>
+    First name :<span th:text="${student.firstName}"></span>
+</p>
+<p>
+    Last Name :<span th:text="${student.lastName}"></span>
+</p>
+<p>
+    Email :<span th:text="${student.email}"></span>
+</p>
+
+    Address
+
+<p>
+Street :<span th:text="${student.address.street}"></span> <br>
+Street :<span th:text="${student.address.city}"></span> <br>
+Street :<span th:text="${student.address.state}"></span> <br>
+Street :<span th:text="${student.address.zip}"></span> <br>
+</p>
+</body>
+</html>

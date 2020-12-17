@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link
+            href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/flatly/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-mhpbKVUOPCSocLzx2ElRISIORFRwr1ZbO9bAlowgM5kO7hnpRBe+brVj8NNPUiFs"
+            crossorigin="anonymous">
+    <title>List of Students</title>
+</head>
+<body>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Street</th>
+        <th scope="col">City</th>
+        <th scope="col">Phone Number</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="student,iterStat : ${students}">
+        <td scope="row" th:text="${iterStat.count}+${'.'}"></td>
+
+        <td th:text="${student.firstName}"></td>
+        <td th:text="${student.lastName}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.address.street}"></td>
+        <td th:text="${student.address.city}"></td>
+        <td th:text="${student.phone.toString()}"></td>
+    </tr>
+
+    </tbody>
+</table>
+</body>
+</html>
